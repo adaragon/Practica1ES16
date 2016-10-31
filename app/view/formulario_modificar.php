@@ -9,7 +9,10 @@
 		<p>Población: <input type="text" name="poblacion" value="<?=VP('poblacion')?>"></p>
 		<p>Código Postal: <input type="text" name="cp" value="<?=VP('cp')?>"></p>
 		<p>Provincia:<?=CreaSelect('tbl_provincias', $Provincias, $valorDefecto='');?> </p>
-		<!-- Al ser alta,estado por defecto será Pendiente de inciar selección, -->
+		<p>Estado: <input type="radio" name="estado" value="P"> Pendiente de inciar selección
+  					<input type="radio" name="estado" value="R"> Realizando selección
+ 					<input type="radio" name="estado" value="S"> Seleccionado candidato 
+ 					<input type="radio" name="estado" value="C"> Cancelada</p>
 		<p>Fecha de creación de la oferta: <input type="text" name="fecha_cre" value="<?=$fecha_hoy?>" readonly> </p>
 		<p>Fecha comunicación: <input type="text" name="fecha_co" value="<?=VP('fecha_co')?>"></p>
 		<p>Psicologo encargado: <input type="text" name="psicologo" value="<?=VP('psicologo')?>"></p>

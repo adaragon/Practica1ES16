@@ -20,7 +20,6 @@ else
 	if(isset($_POST['enviar'])) 
 	{
 		
-		
 		include __DIR__.'/filtrado.php';
 		
 	}
@@ -34,8 +33,8 @@ else
 		}
 		else
 		{
-			/*$estado='Pendiente de inciar selección,';*/
-			/*$oferta= array(
+			/*
+			 	$oferta= array(
    							  "descripcion" => $_POST['descripcion'],
    							  "contacto" => $_POST['contacto'],
 							  "telefono" => $_POST['telefono'],
@@ -44,7 +43,7 @@ else
 							  "poblacion" => $_POST['poblacion'],
 							  "cp" =>$_POST['cp'] ,
 							  "provincia" => $_POST['tbl_provincias'],
-							  "estado" => $estado;
+							  //FALTA ESTADO
 							  "fecha_cre" => $_POST['fecha_cre'],
 							  "fecha_co" => $_POST['fecha_co'],
 							  "psicologo" => $_POST['psicologo'],
@@ -52,7 +51,7 @@ else
 							  "datos" => $_POST['datos'],
 			);
 			
-			InsertaOferta($oferta);
+			ModificarOferta($oferta); TODAVIA NO CREADA
 			
 			echo "DATOS INTRODUCIDOS";*/
 			echo "<p>BIEN</p>";
