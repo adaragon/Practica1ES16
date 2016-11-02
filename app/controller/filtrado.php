@@ -1,6 +1,6 @@
 <?php 
 
-$formato_fecha='^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[/\\/](19|20)\d{2}$';
+$formato_fecha='^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[/\\/](19|20)\d{2}$^';
 $expresion_nom="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|";//Solo admite letras y espacios
 $codigo_postal= "^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$^"; //5 números
 $email= "/[\w]+@{1}[\w]+\.[a-z]{2,3}/"; //formato de email correcto
@@ -81,9 +81,10 @@ $telefono= "/^[\d]{3}[-]*([\d]{2}[-]*){2}[\d]{2}$/"; //solo números y espacios o
 				$mes=$array[1];
 				$anyo=$array[2];
 				
-				if(!(checkdate($array[0], $array[1], $array[2])))
+				if(!(checkdate($array[1], $array[0], $array[2])))
 				{
-					
+					$errores["fecha_co"] = "La fecha de comunicación es incorrecta<br>";
+					$Error=true;
 				}
 			}
 ?>

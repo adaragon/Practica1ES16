@@ -1,5 +1,5 @@
 <?php
-include __DIR__."/../classdb.php";
+//include __DIR__."/../classdb.php";
 
 function InsertaOferta($tarea)
 {
