@@ -9,3 +9,12 @@ function InsertaOferta($tarea)
 	
 }
 
+
+function ModificarOferta($tarea)
+{
+	$bd = Db::getInstance();
+
+	$bd->Modificar('oferta_m', $tarea);
+
+}
+

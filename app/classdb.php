@@ -124,7 +124,8 @@ Class Db {
 		}
 	}
 	
-	public function Insertar($tabla, $tarea){
+	public function Insertar($tabla, $tarea)
+	{
 	
 		$values=array();
 		$campos=array();
@@ -148,4 +149,28 @@ Class Db {
 		}
 	}
 	
+	/*public function Modificar($tabla, $tarea)
+	{
+	
+		$values=array();
+		$campos=array();
+	
+		foreach($tarea as $campo => $valor)
+		{
+			$values[]='"'.addslashes($valor).'"';
+			$campos[]='`'.$campo.'`';
+		}
+		$sql = "UPDATE `$tabla` SET(".implode(',', $campos).")
+				 VALUES (".implode(',', $values)."); ";
+	
+		echo "<p>SQL:</p><pre>$sql</pre>";
+	
+		$ok=$this->link->query($sql);
+	
+		if (! $ok)
+		{
+			echo "<p>Hay error: .".$this->link->error."</p>";
+			exit;
+		}
+	}*/
 }

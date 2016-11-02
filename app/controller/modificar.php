@@ -34,7 +34,7 @@ else
 		else
 		{
 			/*
-			 	$oferta= array(
+			 	$oferta_m= array(
    							  "descripcion" => $_POST['descripcion'],
    							  "contacto" => $_POST['contacto'],
 							  "telefono" => $_POST['telefono'],
@@ -51,7 +51,7 @@ else
 							  "datos" => $_POST['datos'],
 			);
 			
-			ModificarOferta($oferta); TODAVIA NO CREADA
+			ModificarOferta($oferta_m); TODAVIA NO CREADA
 			
 			echo "DATOS INTRODUCIDOS";*/
 			echo "<p>BIEN</p>";
