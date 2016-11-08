@@ -2,7 +2,7 @@
 
 //CONTROLADOR FRONTAL 
 
-/*
+
 define('CTRL_PATH', __DIR__.'/controller/');
 define('MODEL_PATH', __DIR__.'/model/');
 define('VIEW_PATH', __DIR__.'/view/');
@@ -21,7 +21,7 @@ include(TEMPLATE_PATH.'encabezado.php');
 include(TEMPLATE_PATH.'menu.php'); 
 
 // Cuerpo del controlador frontal
-$ctrl=isset($_GET['ctrl']) ? $_GET['ctrl'] : 'inicio';
+$ctrl=isset($_GET['controller']) ? $_GET['controller'] : 'inicio';
 
 // Nombre del fichero a incluir
 $file=CTRL_PATH.$ctrl.'.php';
@@ -38,5 +38,6 @@ include(TEMPLATE_PATH.'pie.php');
 ?>
 </body>
 </html>
- */
-include 'controller/alta.php';
+ <?php 
+//include 'controller/alta.php';
+ ?>

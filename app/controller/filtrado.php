@@ -39,7 +39,11 @@ $telefono= "/^[\d]{3}[-]*([\d]{2}[-]*){2}[\d]{2}$/"; //solo números y espacios o
 				$errores["telefono"] = "El teléfono de contacto sólo puede contener números, espacios y guiones.<br>";
 				$Error=true;
 			}
-		
+		if(! preg_match($expresion_nom,$_POST["poblacion"]))
+		{
+			$errores["poblacion"] = "El nombre de la población sólo puede contener letras<br>";
+			$Error=true;
+		}
 		if($_POST["cp"])
 		{
 			if(! preg_match($codigo_postal,$_POST["cp"]))
@@ -60,31 +64,54 @@ $telefono= "/^[\d]{3}[-]*([\d]{2}[-]*){2}[\d]{2}$/"; //solo números y espacios o
 				$errores["email"] = "El formato del correo electrónico es incorrecto<br>";
 				$Error=true;
 			}
-		if(! preg_match($formato_fecha,$_POST["fecha_co"]))
+		
+		if (! empty($_POST["fecha_co"]))
 		{
-			$errores["fecha_co"] = "El formato de la fecha de comunicación es incorrecto.Debe de ser dd/mm/aaaa<br>";
-			$Error=true;
-				
-		}
-		else 
-			if($_POST["fecha_co"]<$_POST["fecha_cre"])
+			if(! preg_match($formato_fecha,$_POST["fecha_co"]))
 			{
-				$errores["fecha_co"] = "La fecha de comunicación no puede ser anterior a la de creación<br>";
+				$errores["fecha_co"] = "El formato de la fecha de comunicación es incorrecto.Debe de ser dd/mm/aaaa<br>";
 				$Error=true;
+			
 			}
+			else
+				if($_POST["fecha_co"]<$_POST["fecha_cre"])
+				{
+					$errores["fecha_co"] = "La fecha de comunicación no puede ser anterior a la de creación<br>";
+					$Error=true;
+				}
 			else
 			{
 				$fecha=$_POST['fecha_co'];
 				$array=explode("/",$fecha);
-				
+			
 				$dia=$array[0];
 				$mes=$array[1];
 				$anyo=$array[2];
-				
+			
 				if(!(checkdate($array[1], $array[0], $array[2])))
 				{
 					$errores["fecha_co"] = "La fecha de comunicación es incorrecta<br>";
 					$Error=true;
 				}
 			}
+		}
+		
+		if (! empty ($_POST["psicologo"]))
+		{
+			if(! preg_match($expresion_nom,$_POST["psicologo"]))
+			{
+				$errores["psicologo"] = "El nombre del psicologo referenciado sólo puede contener letras<br>";
+				$Error=true;
+			}
+		}
+		
+		if (! empty ($_POST["candidato"]))
+		{
+			if(! preg_match($expresion_nom,$_POST["candidato"]))
+			{
+				$errores["candidato"] = "El nombre del candidato referenciado sólo puede contener letras<br>";
+				$Error=true;
+			}
+		}
+		
 ?>

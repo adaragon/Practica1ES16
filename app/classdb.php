@@ -149,28 +149,34 @@ Class Db {
 		}
 	}
 	
-	/*public function Modificar($tabla, $tarea)
+	public function Modificar($tabla, $registro, $id) 
 	{
 	
-		$values=array();
-		$campos=array();
+		$campos = array();
 	
-		foreach($tarea as $campo => $valor)
-		{
-			$values[]='"'.addslashes($valor).'"';
-			$campos[]='`'.$campo.'`';
+		foreach ($registro as $campo => $valor) {
+			$campos[] = '`' . $campo . '` = "' . addslashes($valor) . '" ';
 		}
-		$sql = "UPDATE `$tabla` SET(".implode(',', $campos).")
-				 VALUES (".implode(',', $values)."); ";
 	
-		echo "<p>SQL:</p><pre>$sql</pre>";
+		$set = implode(',', $campos);
+		$sql = "UPDATE `" . $tabla . "` SET $set WHERE id = $id";
 	
-		$ok=$this->link->query($sql);
-	
-		if (! $ok)
-		{
-			echo "<p>Hay error: .".$this->link->error."</p>";
-			exit;
+		$rs = $this->link->query($sql);
+		if (!$rs) {
+			$this->ShowError();
 		}
-	}*/
+		return $rs;
+	}
+	
+	public function Eliminar($tabla, $id) 
+	{
+	
+		$sql = "DELETE FROM `$tabla` WHERE id=$id";
+	
+		$rs = $this->link->query($sql);
+		if (!$rs) {
+			$this->ShowError();
+		}
+		return $rs;
+	}
 }

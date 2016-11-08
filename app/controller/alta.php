@@ -3,7 +3,8 @@ include __DIR__.'/../config.php';
 include_once __DIR__.'/../classdb.php';
 include_once __DIR__.'/../helpers/helps.php';
 include_once __DIR__.'/../model/provincias.php';
-include_once __DIR__.'/../model/alta.php';
+//include_once __DIR__.'/../model/alta.php';
+include_once MODEL_PATH.'consultas_bd.php';
 $Provincias = GetProvincias();
 
 //variables a usar
