@@ -1,20 +1,18 @@
-<table>
+<table border="1">
 	<tr>
-	  <td><strong>Nº de oferta</strong></td>
-	  <td><strong>Descripcion</strong></td>
-	  <td><strong>Persona de contacto</strong></td>
-	  <td><strong>Teléfono de contacto</strong></td>
-	  <td><strong>Correo electrónico</strong></td>
-	  <td><strong>Dirección</strong></td>
-	  <td><strong>Población</strong></td>
-	  <td><strong>Código Postal</strong></td>
-	  <td><strong>Estado</strong></td>
-	  <td><strong>Provincia</strong></td>
-	  <td><strong>Fecha de creación</strong></td>
-	  <td><strong>Fecha de comunicación</strong></td>
-	  <td><strong>Psicólogo</strong></td>
-	  <td><strong>Candidato</strong></td>
-	  <td><strong>Otros datos del candidato</strong></td>
+	  <td style="text-align:center;"><strong>Nº de oferta</strong></td>
+	  <td style="text-align:center;"><strong>Descripcion</strong></td>
+	  <td style="text-align:center;"><strong>Persona de contacto</strong></td>
+	  <td style="text-align:center;"><strong>Teléfono de contacto</strong></td>
+	  <td style="text-align:center;"><strong>Correo electrónico</strong></td>
+	  <td style="text-align:center;"><strong>Dirección</strong></td>
+	  <td style="text-align:center;"><strong>Población</strong></td>
+	  <td style="text-align:center;"><strong>Codigo Postal</strong></td>
+	  <td style="text-align:center;"><strong>Estado</strong></td>
+	  <td style="text-align:center;"><strong>Provincia</strong></td>
+	  <td style="text-align:center;"><strong>Fecha de creación</strong></td>
+	  <td style="text-align:center;"><strong>Fecha de comunicación</strong></td>
 	</tr>
+	<?php EscribeOferta(ObtenerOfertas($nReg, $ofertasenpagina))?>
 	<!-- RELACIONAR CON FUNCION QUE ESCRIBA LOS REGISTROS DE LA BASE DE DATOS EN LA TABLA -->
 </table>

@@ -1,9 +1,10 @@
 <?php
 include __DIR__.'/../config.php';
 include_once __DIR__.'/../classdb.php';
-include_once __DIR__.'/../helpers/helps.php';
-include_once __DIR__.'/../model/provincias.php';
-//include_once __DIR__.'/../model/alta.php';
+//include_once __DIR__.'/../helpers/helps.php';
+include_once HELPERS_PATH.'helps.php';
+//include_once __DIR__.'/../model/provincias.php';
+include_once MODEL_PATH.'provincias.php';
 include_once MODEL_PATH.'consultas_bd.php';
 $Provincias = GetProvincias();
 
@@ -27,11 +28,11 @@ else
 		
 	}
 		
-		echo 'errores comprobados';
+		//echo 'errores comprobados';
 		
 		if ($Error)
 		{
-			echo 'hay errores';
+			//echo 'hay errores';
 			include __DIR__.'/../view/formulario_alta.php';
 		}
 		else
@@ -57,7 +58,6 @@ else
 			InsertaOferta($oferta);
 			
 			echo "DATOS INTRODUCIDOS";
-			echo "<p>BIEN</p>";
 		}
 		
 }
