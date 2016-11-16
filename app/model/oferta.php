@@ -11,9 +11,10 @@ function ObtenerOfertas($nReg, $ofertasenpagina)
 	
 	while ($line = $bd->LeeRegistro($res)) 
 	{
+		
 		$ofertas[] = $line;
 	}
-	print_r($ofertas);
+	
 	return $ofertas;
 }
 
@@ -26,10 +27,23 @@ function Obtener_total_registros()
 	
 	$bd->Consulta($sql);
 	
-	/* Realizamos un bucle para ir obteniendo los resultados */
+	
 	$line = $bd->LeeRegistro();
 	
 	return $line['numRegistros'];
 	
+}
+
+function Obtener_registro($cod)
+{
+	$bd = Db::getInstance();
+	
+	$sql= 'SELECT * FROM `oferta` WHERE cod= '.$cod;
+	
+	$bd->Consulta($sql);
+	
+	$registro = Array();
+	
+	return $bd->LeeRegistro();
 }
 

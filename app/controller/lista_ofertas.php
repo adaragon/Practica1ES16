@@ -5,6 +5,7 @@ include_once MODEL_PATH.'oferta.php';
 include_once HELPERS_PATH.'help_lista.php';
 
 
+
 $ofertasenpagina=10; //número de resultados por páginas
 
 if (isset($_GET['pag']))
@@ -28,3 +29,4 @@ $totalPaginas = ceil($total_registros / $ofertasenpagina);// Total de páginas qu
 
 //Muestra Vista lista
 include_once VIEW_PATH .'lista_ofertas.php';
+

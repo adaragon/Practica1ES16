@@ -10,11 +10,18 @@ function InsertaOferta($tarea)
 }
 
 
-function ModificarOferta($tarea)
+function ModificarOferta($tabla, $registro, $cod) 
 {
+	/* Creamos la instancia del objeto. Ya estamos conectados */
 	$bd = Db::getInstance();
 
-	$bd->Modificar('oferta_m', $tarea);
-
+	$bd->Modificar($tabla, $registro, $cod);
 }
 
+function EliminarOferta()
+{
+	$bd = Db::getInstance();
+	
+	$bd->Eliminar('oferta', $cod);
+	
+}

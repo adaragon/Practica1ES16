@@ -81,7 +81,7 @@ Class Db {
 			}
 			$result=$this->result;
 		}
-		$this->regActual=$result->fetch_array();;
+		$this->regActual=$result->fetch_assoc();;
 		return $this->regActual;
 	}
 
@@ -149,7 +149,7 @@ Class Db {
 		}
 	}
 	
-	public function Modificar($tabla, $registro, $id) 
+	public function Modificar($tabla, $registro, $cod) 
 	{
 	
 		$campos = array();
@@ -159,22 +159,25 @@ Class Db {
 		}
 	
 		$set = implode(',', $campos);
-		$sql = "UPDATE `" . $tabla . "` SET $set WHERE id = $id";
+		$sql = "UPDATE `" . $tabla . "` SET $set WHERE cod = $cod";
 	
 		$rs = $this->link->query($sql);
-		if (!$rs) {
-			$this->ShowError();
+		if (!$rs) 
+		{
+			echo "<p>Hay error: .".$this->link->error."</p>";
+			
 		}
 		return $rs;
 	}
 	
-	public function Eliminar($tabla, $id) 
+	public function Eliminar($tabla, $cod) 
 	{
 	
 		$sql = "DELETE FROM `$tabla` WHERE id=$id";
 	
 		$rs = $this->link->query($sql);
-		if (!$rs) {
+		if (!$rs)
+		{
 			$this->ShowError();
 		}
 		return $rs;

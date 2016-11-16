@@ -1,24 +1,39 @@
-<?php
 
-function EscribeOferta($ofertas) {
-    foreach ($ofertas as $key => $oferta) 
-    {
+<?php function EscribeOferta($ofertas) 
+{
+	foreach ($ofertas as $key => $oferta) : ?>
+	
+		<tr>
+			<td><?=$oferta['cod'] ?></td>
+			<td><?=$oferta['descripcion'] ?></td>
+			<td><?=$oferta['persona'] ?></td>
+			<td><?=$oferta['telefono'] ?></td>
+			<td><?=$oferta['email'] ?></td>
+			<td><?=$oferta['direccion'] ?></td>
+			<td><?=$oferta['poblacion'] ?></td>
+			<td><?=$oferta['codigo_p'] ?></td>
+			<td><?=$oferta['estado'] ?></td>
+			<td><?=$oferta['provincia'] ?></td>
+			<td><?=$oferta['fecha_creacion'] ?></td>
+			<td><?=$oferta['fecha_comunicacion'] ?></td>
+			<!--  <td><input type="submit" name="modificar" value="Editar"><input type="submit" name="borrar" value="Borrar"></td>-->
+			<td>
+				<a href="?controller=modificar&cod=<?=$oferta['cod'] ?>"><input type="submit" value="Editar"></a>
+				
+			</td>
+		</tr>
+<?php endforeach;
+} ?>
 
-        echo '<tr>'; //Inicio fila
-       	    echo '<td>'.$oferta['cod'].'</td>';
-        	echo '<td>'.$oferta['descripcion'].'</td>';
-        	echo '<td>'.$oferta['persona'].'</td>';
-        	echo '<td>'.$oferta['telefono'].'</td>';
-        	echo '<td>'.$oferta['email'].'</td>';
-        	echo '<td>'.$oferta['direccion'].'</td>';
-        	echo '<td>'.$oferta['poblacion'].'</td>';
-        	echo '<td>'.$oferta['codigo_p'].'</td>';
-        	echo '<td>'.$oferta['estado'].'</td>';
-        	echo '<td>'.$oferta['provincia'].'</td>';
-        	echo '<td>'.$oferta['fecha_creacion'].'</td>';
-        	echo '<td>'.$oferta['fecha_comunicacion'].'</td>';
-       
-        echo '</tr>'; //Fin fila
-    }
+<?php function DatosOferta($cod) 
+{
+
+    $oferta = Obtener_registro($cod);
+    
+    return $oferta;
+    
+    
+    
 }
 
+?>

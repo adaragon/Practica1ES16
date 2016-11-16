@@ -1,25 +1,30 @@
-<!-- CAMBIAR VP POR PoST -->
+<?php 
+$datos=DatosOferta($_GET['cod']);
+print_r($datos);
+echo "<p>El estado es: [".$datos['estado']."]";
+if($datos['estado']=='Pendiente') echo "<p>Esta pendiente</p>";
+?>
 
 <body>
 	<form action="" method="post">
 	
-		<p>Descripci髇: <input type="text" name="descripcion" value="<?=VP('descripcion')?>"></p>
-		<p>Persona de contacto: <input type="text" name="contacto" value="<?=VP('contacto')?>"></p>
-		<p>Tel閒ono de contacto: <input type="text" name="telefono" value="<?=VP('telefono')?>"></p>
-		<p>Correo electr髇ico: <input type="text" name="email" value="<?=VP('email')?>"></p>
-		<p>Direcci髇: <input type="text" name="direccion" value="<?=VP('direccion')?>"></p>
-		<p>Poblaci髇: <input type="text" name="poblacion" value="<?=VP('poblacion')?>"></p>
-		<p>C骴igo Postal: <input type="text" name="cp" value="<?=VP('cp')?>"></p>
-		<p>Provincia:<?=CreaSelect('tbl_provincias', $Provincias, $valorDefecto='');?> </p>
-		<p>Estado: <input type="radio" name="estado" value="Pendiente de inciar selecci髇"> Pendiente de inciar selecci髇
-  					<input type="radio" name="estado" value="Realizando selecci髇"> Realizando selecci髇
- 					<input type="radio" name="estado" value="Seleccionado candidato"> Seleccionado candidato 
- 					<input type="radio" name="estado" value="Cancelada"> Cancelada</p>
-		<p>Fecha de creaci髇 de la oferta: <input type="text" name="fecha_cre" value="<?=$fecha_hoy?>" readonly> </p>
-		<p>Fecha comunicaci髇: <input type="text" name="fecha_co" value="<?=VP('fecha_co')?>"></p>
-		<p>Psicologo encargado: <input type="text" name="psicologo" value="<?=VP('psicologo')?>"></p>
-		<p>Canditato seleccionado: <input type="text" name="candidato" value="<?=VP('candidato')?>"></p>
-		<p>Otros datos candidato: <input type="text" name="datos" value="<?=VP('datos')?>"></p>
+		<p>Descripci贸n: <input type="text" name="descripcion" value="<?=$datos['descripcion']?>"><?php if(isset($errores["descripcion"]))echo $errores["descripcion"] ?></p>
+		<p>Persona de contacto: <input type="text" name="contacto" value="<?=$datos['persona']?>"><?php if(isset($errores["contacto"]))echo $errores["contacto"] ?></p>
+		<p>Tel茅fono de contacto: <input type="text" name="telefono" value="<?=$datos['telefono']?>"><?php if(isset($errores["telefono"]))echo $errores["telefono"] ?></p>
+		<p>Correo electr贸nico: <input type="text" name="email" value="<?=$datos['email']?>"><?php if(isset($errores["email"]))echo $errores["email"] ?></p>
+		<p>Direcci贸n: <input type="text" name="direccion" value="<?=$datos['direccion']?>"></p>
+		<p>Poblaci贸n: <input type="text" name="poblacion" value="<?=$datos['poblacion']?>"><?php if(isset($errores["poblacion"]))echo $errores["poblacion"] ?></p>
+		<p>C贸digo Postal: <input type="text" name="cp" value="<?=$datos['codigo_p']?>"></p>
+		<p>Provincia:<?=CreaSelect('tbl_provincias', $Provincias, $valorDefecto=$datos['provincia']);?> </p>
+		<p>Estado: <input type="radio" name="estado" value="Pendiente de inciar selecci贸n" <?php if($datos['estado']=='Pendiente de inciar selecci贸n') echo 'checked'; ?>> Pendiente de inciar selecci锟絥
+  					<input type="radio" name="estado" value="Realizando selecci贸n" <?php if($datos['estado']=='Realizando selecci贸n') echo 'checked'; ?>> Realizando selecci锟絥
+ 					<input type="radio" name="estado" value="Seleccionado candidato" <?php if($datos[ 'estado']=='Seleccionado candidato') echo 'checked'; ?>> Seleccionado candidato 
+ 					<input type="radio" name="estado" value="Cancelada" <?php if($datos[ 'estado']=='Cancelada') echo 'checked'; ?>> Cancelada</p>
+		<p>Fecha de creaci贸n de la oferta: <input type="text" name="fecha_cre" value="<?=$datos['fecha_creacion']?>" readonly> </p>
+		<p>Fecha comunicaci贸n: <input type="text" name="fecha_co" value="<?=$datos['fecha_comunicacion']?>"><?php if(isset($errores["fecha_co"]))echo $errores["fecha_co"] ?></p>
+		<p>Psicologo encargado: <input type="text" name="psicologo" value="<?=$datos['psicologo']?>"><?php if(isset($errores["psicologo"]))echo $errores["psicologo"] ?></p>
+		<p>Canditato seleccionado: <input type="text" name="candidato" value="<?=$datos['candidato']?>"><?php if(isset($errores["candidato"]))echo $errores["candidato"] ?></p>
+		<p>Otros datos candidato: <input type="text" name="datos" value="<?=$datos['otro_candidato']?>"></p>
 		
 		<p><input name="enviar" type="submit" value="Enviar datos"></p>
 	</form>
