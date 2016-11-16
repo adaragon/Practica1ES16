@@ -173,7 +173,7 @@ Class Db {
 	public function Eliminar($tabla, $cod) 
 	{
 	
-		$sql = "DELETE FROM `$tabla` WHERE id=$id";
+		$sql = "DELETE FROM `$tabla` WHERE cod=$cod";
 	
 		$rs = $this->link->query($sql);
 		if (!$rs)

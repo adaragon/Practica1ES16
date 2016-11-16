@@ -37,7 +37,7 @@ else
 		}
 		else
 		{
-			$estado='Pendiente de inciar selección,';
+			$estado='Pendiente de inciar selección,'; //Este es el estado por defecto
 			$oferta= array(
    							  "descripcion" => $_POST['descripcion'],
    							  "persona" => $_POST['contacto'],

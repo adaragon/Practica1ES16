@@ -19,7 +19,7 @@
 			<!--  <td><input type="submit" name="modificar" value="Editar"><input type="submit" name="borrar" value="Borrar"></td>-->
 			<td>
 				<a href="?controller=modificar&cod=<?=$oferta['cod'] ?>"><input type="submit" value="Editar"></a>
-				
+				<a href="?controller=borrar&cod=<?=$oferta['cod'] ?>"><input type="submit" value="Borrar"></a>	
 			</td>
 		</tr>
 <?php endforeach;
@@ -37,3 +37,4 @@
 }
 
 ?>
+

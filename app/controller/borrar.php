@@ -10,5 +10,18 @@ include_once HELPERS_PATH.'help_lista.php';
 $Provincias = GetProvincias();
 
 
-
+if (! $_POST)
+{
+	 include VIEW_PATH.'borrar.php';
+}
+else
+{
+	if($_POST['de'])
+	{
+		EliminarOferta($_GET['cod']);
+		echo "DATOS BORRADOS";
+	}
+		
+	
+}
 ?>

@@ -18,7 +18,7 @@ function ModificarOferta($tabla, $registro, $cod)
 	$bd->Modificar($tabla, $registro, $cod);
 }
 
-function EliminarOferta()
+function EliminarOferta($cod)
 {
 	$bd = Db::getInstance();
 	
