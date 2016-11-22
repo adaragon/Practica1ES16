@@ -3,5 +3,7 @@
         <li><a href='?controller=inicio'>Inicio</a></li>
         <li><a href='?controller=lista_ofertas'>Lista Ofertas</a></li>
         <li><a href='?controller=alta'>Alta</a></li>
+        <li><a href='?controller=lista_usuarios'>Lista Usuarios</a></li>
+        <li><a href='?controller=alta_usuario'>Alta usuarios</a></li>
     </ul>    
 </div>

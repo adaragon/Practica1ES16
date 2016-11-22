@@ -6,7 +6,7 @@ function ExisteUsuario($usuario)
 
 	$sql = "SELECT COUNT(*) as cont
 	FROM `usuarios`
-	WHERE `usuario` LIKE '$usuario'";
+	WHERE `nombre`= ".$usuario;
 
 	/* Ejecutamos la query */
 	$bd->Consulta($sql);
@@ -24,11 +24,12 @@ function Obtener_usuario($cod)
 {
 	$bd = Db::getInstance();
 
-	$sql= 'SELECT * FROM `oferta` WHERE cod= '.$cod;
+	$sql= 'SELECT * FROM `usuarios` WHERE id= '.$cod;
 
 	$bd->Consulta($sql);
 
 	$registro = Array();
 
 	return $bd->LeeRegistro();
+	print_r($sql);
 }

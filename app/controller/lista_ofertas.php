@@ -3,7 +3,7 @@ include_once __DIR__.'/../classdb.php';
 include_once MODEL_PATH.'lista_oferta.php';
 include_once MODEL_PATH.'oferta.php';
 include_once HELPERS_PATH.'help_lista.php';
-
+include_once MODEL_PATH.'lista.php';
 
 
 $ofertasenpagina=10; //número de resultados por páginas

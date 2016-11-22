@@ -1,10 +1,10 @@
 <?php
-function Obtener_Usuarios() 
+function Obtener_Usuarios($nReg, $usuariosporpaginas) 
 {
 	/* Creamos la instancia del objeto. Ya estamos conectados */
 	$bd = Db::getInstance();
 
-	$sql = 'SELECT id as id, usuario as nombre, tipo as tipo
+	$sql = 'SELECT cod as id, nombre as nombre, tipo as tipo
             FROM `usuarios`';
 
 	/* Ejecutamos la query */
@@ -18,4 +18,19 @@ function Obtener_Usuarios()
 		$usuarios[] = $line;
 	}
 	return $usuarios;
+}
+
+function Obtener_total_registros_u()
+{
+	$bd = Db::getInstance();
+
+	$sql = 'SELECT  count(*) as numRegistros FROM `usuarios`';
+
+	$bd->Consulta($sql);
+
+
+	$line = $bd->LeeRegistro();
+
+	return $line['numRegistros'];
+
 }

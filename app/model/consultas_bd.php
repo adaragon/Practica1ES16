@@ -26,16 +26,16 @@ function EliminarOferta($cod)
 	
 }
 
-function InsertarUsuario($tipo, $usuario, $clave) 
+function InsertarUsuarios($usuario)
 {
-
-	/* Creamos la instancia del objeto. Ya estamos conectados */
 	$bd = Db::getInstance();
 
-	$bd->Insertar('usuarios', array('tipo' => $tipo, 'usuario' => $usuario, 'clave' => $clave));
+	$bd->Insertar('usuarios', $usuario);
+
 }
 
-function ModificaUsuarioEnBD($registro, $id)
+
+function ModificaUsuario($registro, $id)
 {
 
 	/* Creamos la instancia del objeto. Ya estamos conectados */
@@ -46,7 +46,7 @@ function ModificaUsuarioEnBD($registro, $id)
 }
 
 
-function EliminarUsuarioEnBD($id) {
+function EliminarUsuario($id) {
 	/* Creamos la instancia del objeto. Ya estamos conectados */
 	$bd = Db::getInstance();
 

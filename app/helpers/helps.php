@@ -29,3 +29,4 @@ function VP($nombreCampo, $valorporDefecto='')
 		return $valorporDefecto;
 	}
 }
+

@@ -31,9 +31,7 @@
     $oferta = Obtener_registro($cod);
     
     return $oferta;
-    
-    
-    
+       
 }
 
 

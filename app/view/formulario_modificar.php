@@ -1,8 +1,8 @@
 <?php 
 $datos=DatosOferta($_GET['cod']);
-print_r($datos);
+/*print_r($datos);
 echo "<p>El estado es: [".$datos['estado']."]";
-if($datos['estado']=='Pendiente') echo "<p>Esta pendiente</p>";
+if($datos['estado']=='Pendiente') echo "<p>Esta pendiente</p>";*/
 ?>
 
 <body>

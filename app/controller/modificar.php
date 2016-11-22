@@ -9,7 +9,7 @@ include_once HELPERS_PATH.'help_lista.php';
 $Provincias = GetProvincias();
 
 //variables a usar
-$fecha_hoy= date("d/m/Y");
+
 $errores=array();
 $Error=false;
 
