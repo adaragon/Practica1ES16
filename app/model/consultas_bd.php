@@ -25,3 +25,32 @@ function EliminarOferta($cod)
 	$bd->Eliminar('oferta', $cod);
 	
 }
+
+function InsertarUsuario($tipo, $usuario, $clave) 
+{
+
+	/* Creamos la instancia del objeto. Ya estamos conectados */
+	$bd = Db::getInstance();
+
+	$bd->Insertar('usuarios', array('tipo' => $tipo, 'usuario' => $usuario, 'clave' => $clave));
+}
+
+function ModificaUsuarioEnBD($registro, $id)
+{
+
+	/* Creamos la instancia del objeto. Ya estamos conectados */
+	$bd = Db::getInstance();
+
+	/* Ejecutamos la query */
+	$bd->Modificar('usuarios', $registro, $id);
+}
+
+
+function EliminarUsuarioEnBD($id) {
+	/* Creamos la instancia del objeto. Ya estamos conectados */
+	$bd = Db::getInstance();
+
+	/* Ejecutamos la query */
+	$bd->Eliminar('usuarios', $id);
+}
+

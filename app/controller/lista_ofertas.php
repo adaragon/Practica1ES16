@@ -7,7 +7,7 @@ include_once HELPERS_PATH.'help_lista.php';
 
 
 $ofertasenpagina=10; //número de resultados por páginas
-
+$myURL = '?controller=lista_ofertas&';
 if (isset($_GET['pag']))
 {
 	$pag=$_GET['pag']; //Obtiene el número de la página
@@ -19,6 +19,7 @@ else
 	
 // Calculamos el registro por el que se empieza en la sentencia LIMIT
 $nReg = ($pag - 1) * $ofertasenpagina;
+
 
 $oferta= Array();
 $oferta = ObtenerOfertas($nReg, $ofertasenpagina);

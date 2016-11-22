@@ -36,5 +36,32 @@
     
 }
 
+
+function MuestraPaginador($pag_actual, $nPags, $url) {
+	// Mostramos paginador
+	echo '<div class="paginador">';
+	echo EnlaceAPagina($url, 1, 'Inicio');
+	echo EnlaceAPagina($url, $pag_actual - 1, 'Anterior', $pag_actual > 1);
+	//Números Páginas
+	for ($pag = 1; $pag <= $nPags; $pag++) 
+	{
+		echo EnlaceAPagina($url, $pag, $pag, $pag_actual != $pag);
+	}
+	echo EnlaceAPagina($url, $pag_actual + 1, 'Siguiente', $pag_actual < $nPags);
+	echo EnlaceAPagina($url, $nPags, 'Fin');
+
+
+	echo "</div>";
+}
+
+function EnlaceAPagina($url, $pag, $texto, $activo=true)
+{
+	if ($activo)
+		return '<a href="'.$url.'pag='.$pag.'">'.$texto.'</a> ';
+	else 
+		return $texto;
+}
+
+
 ?>
 

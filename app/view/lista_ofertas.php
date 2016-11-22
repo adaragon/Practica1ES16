@@ -17,3 +17,4 @@
 	<?php EscribeOferta(ObtenerOfertas($nReg, $ofertasenpagina))?>
 	
 </table>
+<?php  MuestraPaginador($pag, $totalPaginas, $myURL);?>
