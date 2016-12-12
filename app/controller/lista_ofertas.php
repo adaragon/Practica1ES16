@@ -1,33 +1,40 @@
 <?php
-include_once __DIR__.'/../classdb.php';
-include_once MODEL_PATH.'lista_oferta.php';
+//include_once __DIR__.'/../classdb.php';
+
 include_once MODEL_PATH.'oferta.php';
 include_once HELPERS_PATH.'help_lista.php';
 include_once MODEL_PATH.'lista.php';
 
-
-$ofertasenpagina=10; //número de resultados por páginas
-$myURL = '?controller=lista_ofertas&';
-if (isset($_GET['pag']))
+/*if(!isset($_SESSION['login_correcto']))
 {
-	$pag=$_GET['pag']; //Obtiene el número de la página
-}	
-else
-{
-	$pag=1; //Muestra la primera página
+	include_once CTRL_PATH.'login.php';
 }
+else
+{*/
+	$ofertasenpagina=10; //número de resultados por páginas
+	$myURL = '?controller=lista_ofertas&';
+	if (isset($_GET['pag']))
+	{
+		$pag=$_GET['pag']; //Obtiene el número de la página
+	}
+	else
+	{
+		$pag=1; //Muestra la primera página
+	}
 	
-// Calculamos el registro por el que se empieza en la sentencia LIMIT
-$nReg = ($pag - 1) * $ofertasenpagina;
-
-
-$oferta= Array();
-$oferta = ObtenerOfertas($nReg, $ofertasenpagina);
-
-$total_registros = Obtener_total_registros();
-
-$totalPaginas = ceil($total_registros / $ofertasenpagina);// Total de páginas que vamos a tener
-
-//Muestra Vista lista
-include_once VIEW_PATH .'lista_ofertas.php';
-
+	// Calculamos el registro por el que se empieza en la sentencia LIMIT
+	$nReg = ($pag - 1) * $ofertasenpagina;
+	
+	
+	$oferta= Array();
+	$oferta = ObtenerOfertas($nReg, $ofertasenpagina);
+	
+	$total_registros = Obtener_total_registros();
+	
+	$totalPaginas = ceil($total_registros / $ofertasenpagina);// Total de páginas que vamos a tener
+	
+	//Muestra Vista lista
+	include_once VIEW_PATH .'lista_ofertas.php';
+	
+	
+//}

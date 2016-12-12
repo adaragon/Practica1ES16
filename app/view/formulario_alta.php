@@ -1,21 +1,113 @@
-<body>
-	<form action="" method="post">
+
+<body >
+<form  action="" method="post">
+
+<div id="contacto">
+<div class="container">
+ 
+<div class="row">
+<div class="panel panel-primary">
+ <div class="panel-heading"><h3 class="list-group-item-heading"><b>Registro de oferta</b></h3></div>
+<div id="form">
+<form class="form-horizontal" >
+<br>
+<div class="form-group">
+        <label for="usuario" class="col-md-1">DescripciÃ³n: </label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" name="descripcion" placeholder="DescripciÃ³n de la oferta" value="<?=VP('descripcion')?>">
+	  <?php if(isset($errores["descripcion"]))echo $errores["descripcion"] ?>
+    </div>
 	
-		<p>Descripción: <input type="text" name="descripcion" value="<?=VP('descripcion')?>"><?php if(isset($errores["descripcion"]))echo $errores["descripcion"] ?></p>
-		<p>Persona de contacto: <input type="text" name="contacto" value="<?=VP('contacto')?>"><?php if(isset($errores["contacto"]))echo $errores["contacto"] ?></p>
-		<p>Teléfono de contacto: <input type="text" name="telefono" value="<?=VP('telefono')?>"><?php if(isset($errores["telefono"]))echo $errores["telefono"] ?></p>
-		<p>Correo electrónico: <input type="text" name="email" value="<?=VP('email')?>"><?php if(isset($errores["email"]))echo $errores["email"] ?></p>
-		<p>Dirección: <input type="text" name="direccion" value="<?=VP('direccion')?>"></p>
-		<p>Población: <input type="text" name="poblacion" value="<?=VP('poblacion')?>"><?php if(isset($errores["poblacion"]))echo $errores["poblacion"] ?></p>
-		<p>Código Postal: <input type="text" name="cp" value="<?=VP('cp')?>"><?php if(isset($errores["cp"]))echo $errores["cp"] ?></p>
-		<p>Provincia:<?=CreaSelect('tbl_provincias', $Provincias, $valorDefecto='');?> </p>
-		<!-- Al ser alta,estado por defecto será Pendiente de inciar selección, -->
-		<p>Fecha de creación de la oferta: <input type="text" name="fecha_cre" value="<?=$fecha_hoy?>" readonly> </p>
-		<p>Fecha comunicación: <input type="text" name="fecha_co" value="<?=VP('fecha_co')?>"><?php if(isset($errores["fecha_co"]))echo $errores["fecha_co"] ?></p>
-		<p>Psicologo encargado: <input type="text" name="psicologo" value="<?=VP('psicologo')?>"><?php if(isset($errores["psicologo"]))echo $errores["psicologo"] ?></p>
-		<p>Canditato seleccionado: <input type="text" name="candidato" value="<?=VP('candidato')?>"><?php if(isset($errores["candidato"]))echo $errores["candidato"] ?></p>
-		<p>Otros datos candidato: <input type="text" name="datos" value="<?=VP('datos')?>"></p>
-		
-		<p><input name="enviar" type="submit" value="Enviar datos"></p>
-	</form>
+	
+    <label for="Contraseï¿½a" class="col-md-1">Contactar: </label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" name="contacto" placeholder="Persona de contacto" value="<?=VP('contacto')?>">
+	  <?php if(isset($errores["contacto"]))echo $errores["contacto"] ?>
+    </div>
+	</div>
+	
+	<div class="form-group">
+    <label for="apellido1" class="col-md-1">TelÃ©fono: </label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" name="telefono" placeholder="TelÃ©fono de contacto"  value="<?=VP('telefono')?>">
+	  <?php if(isset($errores["telefono"]))echo $errores["telefono"] ?>
+    </div>
+	
+	
+    <label for="apellido2" class="col-md-1">E-mail: </label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" name="email" placeholder="Correo electrÃ³nico" value="<?=VP('email')?>">
+	  <?php if(isset($errores["email"]))echo $errores["email"] ?>
+    </div>
+	</div>
+	
+	<div class="form-group">
+        <label for="nombre" class="col-md-1">DirecciÃ³n: </label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" name="direccion" placeholder="DirecciÃ³n" value="<?=VP('direccion')?>">
+    </div>
+	
+	
+	<label for="nombre" class="col-md-1">PoblaciÃ³n: </label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" name="poblacion" placeholder="PoblaciÃ³n" value="<?=VP('poblacion')?>">
+	  <?php if(isset($errores["poblacion"]))echo $errores["poblacion"] ?>
+    </div>
+	</div>
+	
+	<div class="form-group" >
+    <label for="direccion" class="col-md-1">C.P: </label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" name="cp" placeholder="CÃ³digo Postal" value="<?=VP('cp')?>"><?php if(isset($errores["cp"]))echo $errores["cp"] ?>
+    </div>
+	
+	  <label for="fijo" class="col-md-1">PsicÃ³logo: </label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" name="psicologo" placeholder="PsicÃ³logo encargado" value="<?=VP('psicologo')?>"><?php if(isset($errores["psicologo"]))echo $errores["psicologo"] ?>
+    </div>
+	</div>	
+	
+	<div class="form-group">
+    <label for="codigo_p" class="col-md-1">Fecha de creaciÃ³n: </label>
+    <div class="col-md-5">
+      <input type="text" name="fecha_cre" class="form-control"  value="<?=$fecha_hoy?>" readonly>
+    </div>
+	
+	
+    <label for="codigo_p" class="col-md-1">Fecha comuniaciÃ³n: </label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" placeholder="Fecha de comunicaciÃ³n" name="fecha_co" value="<?=VP('fecha_co')?>"><?php if(isset($errores["fecha_co"]))echo $errores["fecha_co"] ?>
+    </div>
+	</div>
+	
+	<div class="clearfix"></div>
+	<div class="form-group">
+    <label for="movil" class="col-md-1">Canditato selec.: </label>
+    <div class="col-md-5">
+      <input type="text" name="candidato" value="<?=VP('candidato')?>" class="form-control"  placeholder="Candidato seleccionado"><?php if(isset($errores["candidato"]))echo $errores["candidato"] ?>
+    </div>
+    
+    <label for="movil" class="col-md-1">Otros datos del candidato: </label>
+    <div class="col-md-5">
+      <input type="text" name="datos" value="<?=VP('datos')?>" class="form-control"  placeholder="Otros datos del candidato seleccionado">
+    </div>
+	</div>
+	
+	<div class="clearfix"></div>
+	<div class="form-group">
+    <label for="provincia" class="col-md-1">Provincia: </label>
+    <div class="col-md-5">
+      <?=CreaSelect('tbl_provincias', $Provincias, $valorDefecto='');?>
+    </div>
+	</div>
+	
+</form>
+</div>
+
+<button  type="submit" name="enviar" class="btn btn-primary" style="margin-top: 20; margin-bottom:30; margin-left:550 ">Enviar datos</button>
+</div>
+</div>
+</div>
+</div>
+</form>
 </body>

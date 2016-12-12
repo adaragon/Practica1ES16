@@ -1,7 +1,8 @@
 <?php
-include_once __DIR__.'/../classdb.php';
+//include_once __DIR__.'/../classdb.php';
 include_once MODEL_PATH.'lista_usuarios.php';
 include_once MODEL_PATH.'usuario.php';
+include_once MODEL_PATH.'tipos_usuario.php';
 include_once HELPERS_PATH.'help_lista_usuario.php';
 include_once HELPERS_PATH.'help_lista.php';
 
@@ -20,7 +21,7 @@ else
 // Calculamos el registro por el que se empieza en la sentencia LIMIT
 $nReg = ($pag - 1) * $usuariosporpaginas;
 
-$usuario= Array();
+$usuarios= Array();
 $usuarios = Obtener_Usuarios($nReg, $usuariosporpaginas);
 
 $total_registros = Obtener_total_registros_u();

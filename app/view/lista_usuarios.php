@@ -1,25 +1,18 @@
-<table border="1">
+<div class="container">
+<div class="panel panel-primary">
+  <div class="panel-heading"><h3 class="list-group-item-heading"><b>Lista de Usuarios</b></h3><div style="text-align:right;">NÃºmero total de registros: <?=$total_registros ?></div></div>
+  
+  <table class="table table-bordered">
 	<tr>
-	  <td style="text-align:center;"><strong>Nº de usuario</strong></td>
+	  
 	  <td style="text-align:center;"><strong>Usuario</strong></td>
 	  <td style="text-align:center;"><strong>Tipo</strong></td>
 	  <td style="text-align:center;"><strong>Opciones</strong></td>
 	</tr>
-	<?php 
-	
-	foreach ($usuarios as $key => $usuario) : ?>
-		
-			<tr>
-				<td><?=$usuario['id'] ?></td>
-				<td><?=$usuario['nombre'] ?></td>
-				<td><?=$usuario['tipo'] ?></td>
-				<td>
-					<a href="?controller=modificar_usuario&id=<?=$usuario['id'] ?>"><input type="submit" value="Editar"></a>
-					<a href="?controller=borrar_usuario&id=<?=$usuario['id'] ?>"><input type="submit" value="Borrar"></a>	
-				</td>
-				
-			</tr>
-	<?php endforeach;	?>
+	<?php EscribeUsuarios(Obtener_Usuarios($nReg, $usuariosporpaginas))?>
 	
 </table>
-<?php  MuestraPaginador($pag, $totalPaginas, $myURL);?>
+  
+ </div>
+ <?php  MuestraPaginador($pag, $totalPaginas, $myURL);?>
+</div>

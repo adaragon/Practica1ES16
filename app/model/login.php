@@ -1,23 +1,32 @@
 <?php
-function Usuario_correcto($usuario, $clave) {
+function verificar_usuario ($usuario,$clave,&$result)
+{
 
-	/* Creamos la instancia del objeto. Ya estamos conectados */
+
 	$bd = Db::getInstance();
 
-	$sql = "SELECT usuarios as user, clave as pass
-				FROM `usuarios`
-					WHERE `usuario` LIKE '$usuario'";
+	$sql='SELECT * from usuarios where nombre = "'.$usuario.'" and password = "'.$clave.'";';
+	$count=0;
 
-	/* Ejecutamos la query */
 	$bd->Consulta($sql);
 
-	/* Obtenemos los resultados */
-	$user = $bd->LeeRegistro();
+	while ($reg = $bd->LeeRegistro())
+	{
+		$count++;
 
-	if ($user['pass'] == $clave)
-		return TRUE;
-		else
-			return FALSE;
+		$result=$reg;
+	}
+
+	if ($count==1)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+
+
 }
 
 function GetTipo($usuario) 
@@ -27,7 +36,7 @@ function GetTipo($usuario)
 
 	$sql = "SELECT tipo
 	FROM `usuarios`
-	WHERE `usuario` LIKE '$usuario'";
+	WHERE `nombre` LIKE '$usuario'";
 
 	/* Ejecutamos la query */
 	$bd->Consulta($sql);

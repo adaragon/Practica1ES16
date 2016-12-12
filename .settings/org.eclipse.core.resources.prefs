@@ -1,4 +1,14 @@
 eclipse.preferences.version=1
-encoding//app/config.php=UTF-8
+encoding//app/plantilla/menu.php=UTF-8
+encoding//app/plantilla/pie.php=UTF-8
+encoding//app/view/algunacondicion_buscar.php=UTF-8
+encoding//app/view/alta_usuario.php=UTF-8
 encoding//app/view/borrar.php=UTF-8
+encoding//app/view/buscar.php=UTF-8
+encoding//app/view/formulario_alta.php=UTF-8
 encoding//app/view/formulario_modificar.php=UTF-8
+encoding//app/view/lista_ofertas.php=UTF-8
+encoding//app/view/lista_usuarios.php=UTF-8
+encoding//app/view/login.php=UTF-8
+encoding//app/view/noexistendatos_buscar.php=UTF-8
+encoding//app/view/vista_error.php=UTF-8

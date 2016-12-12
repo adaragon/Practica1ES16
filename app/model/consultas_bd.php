@@ -1,11 +1,11 @@
 <?php
 //include __DIR__."/../classdb.php";
 
-function InsertaOferta($tarea)
+function InsertaOferta($oferta)
 {
 	$bd = Db::getInstance();
 	
-	$bd->Insertar('oferta', $tarea);
+	$bd->Insertar('oferta', $oferta);
 	
 }
 
@@ -35,22 +35,23 @@ function InsertarUsuarios($usuario)
 }
 
 
-function ModificaUsuario($registro, $id)
+function ModificaUsuario($registro, $cod)
 {
 
 	/* Creamos la instancia del objeto. Ya estamos conectados */
 	$bd = Db::getInstance();
 
 	/* Ejecutamos la query */
-	$bd->Modificar('usuarios', $registro, $id);
+	$bd->Modificar('usuarios', $registro, $cod);
 }
 
 
-function EliminarUsuario($id) {
+function EliminarUsuario($cod) 
+{
 	/* Creamos la instancia del objeto. Ya estamos conectados */
 	$bd = Db::getInstance();
 
 	/* Ejecutamos la query */
-	$bd->Eliminar('usuarios', $id);
+	$bd->Eliminar('usuarios', $cod);
 }
 

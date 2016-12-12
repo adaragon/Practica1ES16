@@ -4,13 +4,12 @@ function Obtener_Usuarios($nReg, $usuariosporpaginas)
 	/* Creamos la instancia del objeto. Ya estamos conectados */
 	$bd = Db::getInstance();
 
-	$sql = 'SELECT cod as id, nombre as nombre, tipo as tipo
-            FROM `usuarios`';
+	$sql = 'SELECT  * FROM usuarios  LIMIT ' . $nReg .', '.$usuariosporpaginas;
 
 	/* Ejecutamos la query */
 	$bd->Consulta($sql);
 
-	// Creamos el array donde se guardar√°n los usuarios
+	// Creamos el array donde se guardar·n los usuarios
 	$usuarios = Array();
 
 	/* Realizamos un bucle para ir obteniendo los resultados */

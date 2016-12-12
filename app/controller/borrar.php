@@ -1,7 +1,7 @@
 <?php 
 
-include __DIR__.'/../config.php';
-include __DIR__.'/../classdb.php';
+//include __DIR__.'/../config.php';
+//include __DIR__.'/../classdb.php';
 include_once HELPERS_PATH.'helps.php';
 include_once MODEL_PATH.'provincias.php';
 include_once MODEL_PATH.'consultas_bd.php';
@@ -19,7 +19,7 @@ else
 	if($_POST['de'])
 	{
 		EliminarOferta($_GET['cod']);
-		echo "DATOS BORRADOS";
+		include CTRL_PATH.'lista_ofertas.php';
 	}
 		
 	

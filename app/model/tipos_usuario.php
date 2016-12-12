@@ -10,7 +10,7 @@ function GetTipos()
 	/*Ejecutamos la query*/
 	$bd->Consulta($sql);
 
-	// Creamos el array donde se guardarÃ¡n las provincias
+	// Creamos el array donde se guardarán las provincias
 	$tipos = Array();
 
 	/*Realizamos un bucle para ir obteniendo los resultados*/
@@ -20,3 +20,18 @@ function GetTipos()
 	}
 	return $tipos;
 }
+
+function Obtener_tipo($cod)
+{
+	$bd = Db::getInstance();
+
+	$sql= 'SELECT tipo as nom FROM `tbl_tipos` WHERE cod= '.$cod;
+
+	$bd->Consulta($sql);
+
+	$line = $bd->LeeRegistro();
+
+	return $line['nom'];
+	
+}
+

@@ -8,14 +8,14 @@ $telefono= "/^[\d]{3}[-]*([\d]{2}[-]*){2}[\d]{2}$/"; //solo números y espacios o
 
 		if(empty($_POST["descripcion"]))
 		{
-			$errores["descripcion"] = "El campo descripcion no puede estár vacío <br>";
+			$errores["descripcion"] = "<p><font color=red>El campo descripcion no puede estár vacío </font></p>";
 			$Error=true;
 			
 		}
 		
 		if(empty($_POST["contacto"]))
 		{
-			$errores["contacto"] = "El campo Persona de contacto no puede estar vacío <br>";
+			$errores["contacto"] = "<p><font color=red>El campo Persona de contacto no puede estar vacío </font></p>";
 			$Error=true;
 			
 		}
@@ -23,45 +23,45 @@ $telefono= "/^[\d]{3}[-]*([\d]{2}[-]*){2}[\d]{2}$/"; //solo números y espacios o
 		{
 			if(! preg_match($expresion_nom,$_POST["contacto"]))
 			{
-				$errores["contacto"] = "La persona de conacto sólo puede contener letras<br>";
+				$errores["contacto"] = "<p><font color=red>La persona de conacto sólo puede contener letras</font></p>";
 				$Error=true;
 			}
 		}
 		
 		if(empty($_POST["telefono"]))
 		{
-			$errores["telefono"] = "El campo Teléfono de contacto no puede estar vacío <br>";
+			$errores["telefono"] = "<p><font color=red>El campo Teléfono de contacto no puede estar vacío </font></p>";
 			$Error=true;
 		}
 		else
 			if(! preg_match($telefono,$_POST["telefono"]))
 			{
-				$errores["telefono"] = "El teléfono de contacto sólo puede contener números, espacios y guiones.<br>";
+				$errores["telefono"] = "El teléfono de contacto sólo puede contener números, espacios y guiones.</font></p>";
 				$Error=true;
 			}
 		if(! preg_match($expresion_nom,$_POST["poblacion"]))
 		{
-			$errores["poblacion"] = "El nombre de la población sólo puede contener letras<br>";
+			$errores["poblacion"] = "<p><font color=red>El nombre de la población sólo puede contener letras</font></p>";
 			$Error=true;
 		}
 		if($_POST["cp"])
 		{
 			if(! preg_match($codigo_postal,$_POST["cp"]))
 			{
-				$errores["cp"] = "El código postal sólo puede contener 5 números.<br>";
+				$errores["cp"] = "<p><font color=red>El código postal sólo puede contener 5 números.</font></p>";
 				$Error=true;
 			}
 		}
 		
 		if(empty($_POST["email"]))
 		{
-			$errores["email"] = "El campo Correo Electrónico no puede estar vacío <br>";
+			$errores["email"] = "<p><font color=red>El campo Correo Electrónico no puede estar vacío </font></p>";
 			$Error=true;
 		}
 		else
 			if(! preg_match($email,$_POST["email"]))
 			{
-				$errores["email"] = "El formato del correo electrónico es incorrecto<br>";
+				$errores["email"] = "<p><font color=red>El formato del correo electrónico es incorrecto</font></p>";
 				$Error=true;
 			}
 		
@@ -69,14 +69,14 @@ $telefono= "/^[\d]{3}[-]*([\d]{2}[-]*){2}[\d]{2}$/"; //solo números y espacios o
 		{
 			if(! preg_match($formato_fecha,$_POST["fecha_co"]))
 			{
-				$errores["fecha_co"] = "El formato de la fecha de comunicación es incorrecto.Debe de ser dd/mm/aaaa<br>";
+				$errores["fecha_co"] = "<p><font color=red>El formato de la fecha de comunicación es incorrecto.Debe de ser dd/mm/aaaa</font></p>";
 				$Error=true;
 			
 			}
 			else
-				if($_POST["fecha_co"]<$_POST["fecha_cre"])
+				if(strtotime($_POST["fecha_co"]) < strtotime($_POST["fecha_cre"]))
 				{
-					$errores["fecha_co"] = "La fecha de comunicación no puede ser anterior a la de creación<br>";
+					$errores["fecha_co"] = "<p><font color=red>La fecha de comunicación no puede ser anterior a la de creación</font></p>";
 					$Error=true;
 				}
 			else
@@ -90,7 +90,7 @@ $telefono= "/^[\d]{3}[-]*([\d]{2}[-]*){2}[\d]{2}$/"; //solo números y espacios o
 			
 				if(!(checkdate($array[1], $array[0], $array[2])))
 				{
-					$errores["fecha_co"] = "La fecha de comunicación es incorrecta<br>";
+					$errores["fecha_co"] = "<p><font color=red>La fecha de comunicación es incorrecta</font></p>";
 					$Error=true;
 				}
 			}
@@ -100,7 +100,7 @@ $telefono= "/^[\d]{3}[-]*([\d]{2}[-]*){2}[\d]{2}$/"; //solo números y espacios o
 		{
 			if(! preg_match($expresion_nom,$_POST["psicologo"]))
 			{
-				$errores["psicologo"] = "El nombre del psicologo referenciado sólo puede contener letras<br>";
+				$errores["psicologo"] = "<p><font color=red>El nombre del psicologo referenciado sólo puede contener letras</font></p>";
 				$Error=true;
 			}
 		}
@@ -109,7 +109,7 @@ $telefono= "/^[\d]{3}[-]*([\d]{2}[-]*){2}[\d]{2}$/"; //solo números y espacios o
 		{
 			if(! preg_match($expresion_nom,$_POST["candidato"]))
 			{
-				$errores["candidato"] = "El nombre del candidato referenciado sólo puede contener letras<br>";
+				$errores["candidato"] = "<p><font color=red>El nombre del candidato referenciado sólo puede contener letras</font></p>";
 				$Error=true;
 			}
 		}

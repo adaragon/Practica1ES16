@@ -1,6 +1,6 @@
 <?php
-include __DIR__.'/../config.php';
-include_once __DIR__.'/../classdb.php';
+//include __DIR__.'/../config.php';
+//include_once __DIR__.'/../classdb.php';
 //include_once __DIR__.'/../helpers/helps.php';
 include_once HELPERS_PATH.'helps.php';
 //include_once __DIR__.'/../model/provincias.php';
@@ -34,6 +34,7 @@ else
 		{
 			//echo 'hay errores';
 			include __DIR__.'/../view/formulario_alta.php';
+			
 		}
 		else
 		{
@@ -54,10 +55,9 @@ else
 							  "candidato" => $_POST['candidato'],
 							  "otro_candidato" => $_POST['datos']
 			);
-			print_r($oferta);
 			InsertaOferta($oferta);
 			
-			echo "DATOS INTRODUCIDOS";
+			include_once CTRL_PATH.'lista_ofertas.php';
 		}
 		
 }
